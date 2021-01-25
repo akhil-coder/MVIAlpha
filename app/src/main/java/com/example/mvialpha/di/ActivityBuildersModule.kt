@@ -4,6 +4,10 @@ import com.example.mvialpha.di.auth.AuthFragmentBuildersModule
 import com.example.mvialpha.di.auth.AuthModule
 import com.example.mvialpha.di.auth.AuthScope
 import com.example.mvialpha.di.auth.AuthViewModelModule
+import com.example.mvialpha.di.main.MainFragmentBuildersModule
+import com.example.mvialpha.di.main.MainModule
+import com.example.mvialpha.di.main.MainScope
+import com.example.mvialpha.di.main.MainViewModelModule
 import com.example.mvialpha.ui.auth.AuthActivity
 import com.example.mvialpha.ui.main.MainActivity
 import dagger.Module
@@ -18,6 +22,9 @@ abstract class ActivityBuildersModule {
     )
     abstract fun contributeAuthActivity(): AuthActivity
 
-    @ContributesAndroidInjector
+    @MainScope
+    @ContributesAndroidInjector(
+        modules = [MainModule::class, MainFragmentBuildersModule::class, MainViewModelModule::class]
+    )
     abstract fun contributeMainActivity(): MainActivity
 }

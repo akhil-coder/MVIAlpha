@@ -1,6 +1,5 @@
 package com.example.mvialpha
 
-import com.example.mvialpha.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 
