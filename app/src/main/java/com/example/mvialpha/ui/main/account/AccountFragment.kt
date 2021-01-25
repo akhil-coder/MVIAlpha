@@ -37,6 +37,8 @@ class AccountFragment : BaseAccountFragment(){
         inflater.inflate(R.menu.edit_view_menu, menu)
     }
 
+    // Git check
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.edit ->{
