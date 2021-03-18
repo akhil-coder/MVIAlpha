@@ -18,6 +18,7 @@ import com.example.mvialpha.ui.main.blog.ViewBlogFragment
 import com.example.mvialpha.util.BottomNavController
 import com.example.mvialpha.util.BottomNavController.*
 import com.example.mvialpha.util.setUpNavigation
+import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -87,7 +88,7 @@ OnNavigationReselectedListener{
     }
 
     override fun onGraphChange() {
-        TODO(" What needs to happen when graph changes?")
+        expandAppbar()
     }
 
     override fun onReselectNavItem(navController: NavController, fragment: Fragment) = when(fragment){
@@ -98,10 +99,10 @@ OnNavigationReselectedListener{
             navController.navigate(R.id.action_updateBlogFragment_to_blogFragment)
         }
         is UpdateAccountFragment -> {
-            navController.navigate(R.id.action_updateAccountFragment_to_home)
+            navController.navigate(R.id.action_updateBlogFragment_to_blogFragment)
         }
         is ChangePasswordFragment -> {
-            navController.navigate(R.id.action_changePasswordFragment_to_home)
+            navController.navigate(R.id.action_changePasswordFragment_to_accountFragment)
         }
         else -> {
             // Do nothing
@@ -117,6 +118,10 @@ OnNavigationReselectedListener{
             android.R.id.home -> onBackPressed()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun expandAppbar() {
+        findViewById<AppBarLayout>(R.id.app_bar).setExpanded(true)
     }
 
     override fun onBackPressed() = bottomNavController.onBackPressed()

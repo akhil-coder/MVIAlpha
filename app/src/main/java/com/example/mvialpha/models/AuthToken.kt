@@ -18,6 +18,7 @@ import com.google.gson.annotations.SerializedName
         onDelete = CASCADE
     )]
 )
+
 data class AuthToken(
     @PrimaryKey
     @ColumnInfo(name = "account_pk")

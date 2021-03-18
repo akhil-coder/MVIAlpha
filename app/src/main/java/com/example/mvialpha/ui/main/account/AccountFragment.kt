@@ -10,9 +10,6 @@ import javax.inject.Inject
 
 class AccountFragment : BaseAccountFragment(){
 
-    @Inject
-    lateinit var sessionManager: SessionManager
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,7 +25,7 @@ class AccountFragment : BaseAccountFragment(){
             findNavController().navigate(R.id.action_accountFragment_to_changePasswordFragment)
         }
         logout_button.setOnClickListener {
-            sessionManager.logout()
+            viewModel.logout()
         }
     }
 
@@ -36,8 +33,6 @@ class AccountFragment : BaseAccountFragment(){
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.edit_view_menu, menu)
     }
-
-    // Git check
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
@@ -48,5 +43,4 @@ class AccountFragment : BaseAccountFragment(){
         }
         return super.onOptionsItemSelected(item)
     }
-
 }

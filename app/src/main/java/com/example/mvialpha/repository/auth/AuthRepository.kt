@@ -29,6 +29,7 @@ import com.example.mvialpha.util.SuccessHandling.Companion.RESPONSE_CHECK_PREVIO
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.Job
 import javax.inject.Inject
+import javax.inject.Singleton
 
 class AuthRepository
 @Inject

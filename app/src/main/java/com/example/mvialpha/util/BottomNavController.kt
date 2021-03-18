@@ -81,6 +81,7 @@ class BottomNavController(
             else -> activity.finish()
         }
     }
+
     private class BackStack: ArrayList<Int>(){
         companion object{
             fun of(vararg elements: Int): BackStack{
@@ -107,7 +108,6 @@ class BottomNavController(
         this.navItemChangeListener = object: OnNavigationItemChanged{
             override fun onItemChanged(itemId: Int) {
                 listener.invoke(itemId)
-
             }
         }
     }
@@ -126,7 +126,7 @@ class BottomNavController(
         fun onGraphChange()
     }
 
-    interface OnNavigationReselectedListener {
+    interface OnNavigationReselectedListener{
         fun onReselectNavItem(navController: NavController, fragment: Fragment)
     }
 

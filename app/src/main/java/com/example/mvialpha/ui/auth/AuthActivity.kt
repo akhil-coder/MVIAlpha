@@ -15,6 +15,7 @@ import com.example.mvialpha.ui.BaseActivity
 import com.example.mvialpha.ui.ResponseType
 import com.example.mvialpha.ui.auth.state.AuthStateEvent
 import com.example.mvialpha.ui.main.MainActivity
+import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -33,6 +34,10 @@ class AuthActivity : BaseActivity(), NavController.OnDestinationChangedListener 
         findNavController(R.id.auth_nav_host_fragment).addOnDestinationChangedListener(this)
         subscribeObservers()
         checkPreviousAuthUser()
+    }
+
+    override fun expandAppbar() {
+        // Ignore
     }
 
     private fun subscribeObservers() {

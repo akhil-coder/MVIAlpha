@@ -32,13 +32,7 @@
             app:exitAnim="@anim/slide_out_left"/>
         <action
             android:id="@+id/action_viewBlogFragment_to_blogFragment"
-            app:destination="@id/blogFragment"
-            app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/fade_out"
-            app:enterAnim="@anim/fade_in"
-            app:exitAnim="@anim/fade_out"
-            app:popUpTo="@id/nav_blog"
-            app:popUpToInclusive="true" />
+            app:destination="@id/blogFragment" />
     </fragment>
     <fragment
         android:id="@+id/updateBlogFragment"
